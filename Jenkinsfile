@@ -14,5 +14,15 @@ pipeline {
             sh 'gradle build'
         }
     }
+        stage('Tests') {
+      steps { 
+        sh 'gradle test'
+      }
+    }
+        stage('Run Project') {
+      steps { 
+        sh 'gradle run'
+      }
+    }
   }
 }
