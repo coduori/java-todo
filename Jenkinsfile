@@ -14,7 +14,7 @@ pipeline {
             sh 'gradle build'
         }
     }
-        stage('Tests') {
+        stage('Testing Source code') {
       steps { 
         sh 'gradle test'
       }
