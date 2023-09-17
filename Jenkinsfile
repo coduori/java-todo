@@ -5,9 +5,6 @@ pipeline {
   }
   stages{
     stage('clone repository') {
-        steps { 
-            git 'https://github.com/coduori/java-todo'
-        }
         input {
             message 'What is your name?'
             ok 'Submit'
@@ -18,6 +15,7 @@ pipeline {
             }
         }
         steps { 
+            git 'https://github.com/coduori/java-todo'
             echo "User: ${AUTHORISED_BY} said Ok."
             echo "User: ${submitter} said Ok."
         }
