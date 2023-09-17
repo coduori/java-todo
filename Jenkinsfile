@@ -3,7 +3,6 @@ pipeline {
   tools {
      gradle 'Gradle-6'
   }
-  stages { 
     stage('clone repository') {
         steps { 
             git 'https://github.com/coduori/java-todo'
@@ -23,6 +22,5 @@ pipeline {
       steps { 
         sh 'gradle run'
       }
-    }
   }
 }
