@@ -3,6 +3,7 @@ pipeline {
   tools {
      gradle 'Gradle-6'
   }
+  retries(4)
   stages{
     stage('clone repository') {
         input {
@@ -16,8 +17,6 @@ pipeline {
         }
         steps { 
             git 'https://github.com/coduori/java-todo'
-            echo "User: ${AUTHORISED_BY} said Ok."
-            echo "User: ${submitter} said Ok."
         }
     }
     stage('Build project') {
