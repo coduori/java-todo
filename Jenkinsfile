@@ -3,10 +3,15 @@ pipeline {
   tools {
      gradle 'Gradle-6'
   }
+  stages{
     stage('clone repository') {
         steps { 
             git 'https://github.com/coduori/java-todo'
+            input {
+              'What is your name'
+            }
         }
+    
     }
     stage('Build project') {
         steps { 
@@ -22,5 +27,6 @@ pipeline {
       steps { 
         sh 'gradle run'
       }
+        }
   }
 }
