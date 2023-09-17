@@ -17,6 +17,10 @@ pipeline {
                     string(name:'username', defaultValue: 'user', description: 'Username of the user pressing Ok')
             }
         }
+        steps { 
+            echo "User: ${AUTHORISED_BY} said Ok."
+            echo "User: ${submitter} said Ok."
+        }
     }
     stage('Build project') {
         steps { 
