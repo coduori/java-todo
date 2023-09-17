@@ -3,7 +3,9 @@ pipeline {
   tools {
      gradle 'Gradle-6'
   }
-  retry(4)
+  options{
+    retry(4)
+  }
   stages{
     stage('clone repository') {
         input {
